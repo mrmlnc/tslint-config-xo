@@ -1,0 +1,51 @@
+{
+  "name": "tslint-config-xo",
+  "version": "0.1.0",
+  "description": "XO config for TSLint.",
+  "license": "MIT",
+  "repository": "mrmlnc/tslint-config-xo",
+  "author": {
+    "name": "Denis Malinochkin",
+    "url": "canonium.com"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "scripts": {
+    "test": "xo && mocha"
+  },
+  "files": [
+    "index.js",
+    "esnext.js"
+  ],
+  "keywords": [
+    "tslint",
+    "config",
+    "XO"
+  ],
+  "dependencies": {
+    "tslint-eslint-rules": "1.3.0",
+    "tslint-microsoft-contrib": "2.0.9"
+  },
+  "devDependencies": {
+    "xo": "^0.16.0",
+    "mocha": "^3.0.1",
+    "tslint": "^3.14.0",
+    "typescript": "^1.8.10"
+  },
+  "xo": {
+    "space": true,
+    "rules": {
+      "no-var": 2,
+      "prefer-const": [2, { "destructuring": "all" }],
+      "space-before-function-paren": [2, "never"],
+      "babel/arrow-parens": [2, "always"],
+      "babel/object-curly-spacing": [2, "always"],
+      "babel/generator-star-spacing": [2, "after"]
+    },
+    "envs": [
+      "node",
+      "mocha"
+    ]
+  }
+}
