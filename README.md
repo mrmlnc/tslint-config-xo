@@ -35,6 +35,11 @@ This package also exposes `xo/esnext` if you want ES2015+ rules:
 }
 ```
 
+## We use
+
+  * [buzinas/tslint-eslint-rules](https://github.com/buzinas/tslint-eslint-rules)
+  * [Microsoft/tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib)
+
 ## Changelog
 
 See the [Releases section of our GitHub project](https://github.com/mrmlnc/tslint-config-xo/releases) for changelogs for each release version.
