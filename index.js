@@ -107,7 +107,6 @@ module.exports = {
 		//   * space-in-parens
 		//   * space-infix-ops
 		//   * space-unary-ops
-		//   * spaced-comment
 		//   * unicode-bom
 		//   * arrow-parens
 		//   * arrow-spacing
@@ -220,6 +219,10 @@ module.exports = {
 			'single',
 			'jsx-double',
 			'avoid-escape'
-		] // quotes + jsx-quotes
+		], // quotes + jsx-quotes
+		'comment-format': [
+			true,
+			'check-space' // 'always'
+		] // spaced-comment, but without 'line' & 'block' options
 	}
 };
