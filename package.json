@@ -34,9 +34,7 @@
     "typescript": "^1.8.10"
   },
   "xo": {
-    "space": true,
     "rules": {
-      "no-var": 2,
       "prefer-const": [2, { "destructuring": "all" }],
       "space-before-function-paren": [2, "never"],
       "babel/arrow-parens": [2, "always"],
