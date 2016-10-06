@@ -2,10 +2,12 @@
 
 const path = require('path');
 
+const nodeModulesPath = path.join(process.cwd(), 'node_modules');
+
 module.exports = {
 	rulesDirectory: [
-		path.join(path.dirname(require.resolve('tslint-eslint-rules')), 'dist/rules'),
-		path.dirname(require.resolve('tslint-microsoft-contrib'))
+		path.join(nodeModulesPath, 'tslint-eslint-rules/dist/rules'),
+		path.join(nodeModulesPath, 'tslint-microsoft-contrib')
 	],
 	rules: {
 		// Not applicable to TypeScript:
