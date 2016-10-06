@@ -109,6 +109,7 @@ module.exports = {
 		//   * space-unary-ops
 		//   * spaced-comment
 		//   * unicode-bom
+		//   * arrow-parens
 		//   * arrow-spacing
 		//   * constructor-super
 		//   * generator-star-spacing
@@ -220,6 +221,5 @@ module.exports = {
 			'jsx-double',
 			'avoid-escape'
 		] // quotes + jsx-quotes
-		// 'as-needed' not implemented in 'arrow-parens'
 	}
 };
