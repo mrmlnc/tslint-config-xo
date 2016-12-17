@@ -8,7 +8,8 @@ module.exports = {
 	rulesDirectory: [
 		path.join(nodeModulesPath, 'tslint-eslint-rules/dist/rules'),
 		path.join(nodeModulesPath, 'tslint-microsoft-contrib'),
-		path.join(nodeModulesPath, 'vrsource-tslint-rules/rules')
+		path.join(nodeModulesPath, 'vrsource-tslint-rules/rules'),
+		path.join(nodeModulesPath, 'tslint-immutable/rules')
 	],
 	rules: {
 		// Not applicable to TypeScript:
@@ -170,6 +171,7 @@ module.exports = {
 		'no-arg': true, // no-caller
 		'no-eval': true,
 		'no-switch-case-fall-through': true, // no-fallthrough
+		'no-label': true, // no-labels
 		'no-multi-spaces': [
 			true,
 			{

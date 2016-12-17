@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "tslint-eslint-rules": "3.2.0",
+    "tslint-immutable": "^2.1.0",
     "tslint-microsoft-contrib": "4.0.0",
     "vrsource-tslint-rules": "4.0.0"
   },
@@ -37,11 +38,28 @@
   "xo": {
     "rules": {
       "no-var": 2,
-      "prefer-const": [2, { "destructuring": "all" }],
-      "space-before-function-paren": [2, "never"],
-      "arrow-parens": [2, "always"],
-      "object-curly-spacing": [2, "always"],
-      "generator-star-spacing": [2, "after"]
+      "prefer-const": [
+        2,
+        {
+          "destructuring": "all"
+        }
+      ],
+      "space-before-function-paren": [
+        2,
+        "never"
+      ],
+      "arrow-parens": [
+        2,
+        "always"
+      ],
+      "object-curly-spacing": [
+        2,
+        "always"
+      ],
+      "generator-star-spacing": [
+        2,
+        "after"
+      ]
     },
     "envs": [
       "node",

@@ -10,7 +10,8 @@ module.exports = {
 	rulesDirectory: [
 		path.join(nodeModulesPath, 'tslint-eslint-rules/dist/rules'),
 		path.join(nodeModulesPath, 'tslint-microsoft-contrib'),
-		path.join(nodeModulesPath, 'vrsource-tslint-rules/rules')
+		path.join(nodeModulesPath, 'vrsource-tslint-rules/rules'),
+		path.join(nodeModulesPath, 'tslint-immutable/rules')
 	],
 	rules: Object.assign({
 		// Not implement:
