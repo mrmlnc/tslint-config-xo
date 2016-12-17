@@ -201,7 +201,25 @@ module.exports = {
 		indent: [
 			true,
 			'tabs'
-		], // indent + no-mixed-spaces-and-tabs
+		], // no-mixed-spaces-and-tabs
+		'ter-indent': [
+			true,
+			'tab',
+			{
+				SwitchCase: 1,
+				FunctionDeclaration: {
+					parameters: 1,
+					body: 1
+				},
+				FunctionExpression: {
+					parameters: 1,
+					body: 1
+				},
+				CallExpression: {
+					arguments: 1
+				}
+			}
+		], // indent
 		'linebreak-style': 'LF',
 		'new-parens': true,
 		'no-consecutive-blank-lines': true, // no-multiple-empty-lines
