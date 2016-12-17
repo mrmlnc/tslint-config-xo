@@ -7,7 +7,8 @@ const nodeModulesPath = path.join(process.cwd(), 'node_modules');
 module.exports = {
 	rulesDirectory: [
 		path.join(nodeModulesPath, 'tslint-eslint-rules/dist/rules'),
-		path.join(nodeModulesPath, 'tslint-microsoft-contrib')
+		path.join(nodeModulesPath, 'tslint-microsoft-contrib'),
+		path.join(nodeModulesPath, 'vrsource-tslint-rules/rules')
 	],
 	rules: {
 		// Not applicable to TypeScript:
@@ -159,6 +160,12 @@ module.exports = {
 		'no-unexpected-multiline': true,
 		'no-shadowed-variable': true, // block-scoped-var (?)
 		curly: true,
+		'dot-notation': [
+			true,
+			{
+				'allow-pattern': '^[a-z]+(_[a-z]+)+$'
+			}
+		], // dot-notation
 		'switch-default': true, // default-case
 		'triple-equals': true, // eqeqeq
 		forin: true, // guard-for-in

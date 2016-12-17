@@ -25,7 +25,8 @@
   ],
   "dependencies": {
     "tslint-eslint-rules": "3.2.0",
-    "tslint-microsoft-contrib": "4.0.0"
+    "tslint-microsoft-contrib": "4.0.0",
+    "vrsource-tslint-rules": "4.0.0"
   },
   "devDependencies": {
     "xo": "^0.17.1",
