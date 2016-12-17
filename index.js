@@ -113,7 +113,6 @@ module.exports = {
 		//   * space-infix-ops
 		//   * space-unary-ops
 		//   * unicode-bom
-		//   * arrow-spacing
 		//   * constructor-super
 		//   * generator-star-spacing
 		//   * no-class-assign
@@ -241,6 +240,13 @@ module.exports = {
 		'ter-arrow-parens': [
 			true,
 			'as-needed'
-		] // arrow-parens
+		], // ter-arrow-parens
+		'ter-arrow-spacing': [
+			true,
+			{
+				before: true,
+				after: true
+			}
+		] // arrow-spacing
 	}
 };
