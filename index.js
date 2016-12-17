@@ -113,7 +113,6 @@ module.exports = {
 		//   * space-infix-ops
 		//   * space-unary-ops
 		//   * unicode-bom
-		//   * arrow-parens
 		//   * arrow-spacing
 		//   * constructor-super
 		//   * generator-star-spacing
@@ -238,6 +237,10 @@ module.exports = {
 		'comment-format': [
 			true,
 			'check-space' // 'always'
-		] // spaced-comment, but without 'line' & 'block' options
+		], // spaced-comment, but without 'line' & 'block' options
+		'ter-arrow-parens': [
+			true,
+			'as-needed'
+		] // arrow-parens
 	}
 };
