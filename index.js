@@ -102,7 +102,6 @@ module.exports = {
 		//   * no-whitespace-before-property
 		//   * no-spaced-func
 		//   * no-unneeded-ternary
-		//   * object-curly-spacing
 		//   * operator-assignment
 		//   * operator-linebreak
 		//   * padded-blocks
@@ -234,6 +233,10 @@ module.exports = {
 			true,
 			'as-needed'
 		], // quote-props
+		'object-curly-spacing': [
+			true,
+			'never'
+		],
 		quotemark: [
 			true,
 			'single',
