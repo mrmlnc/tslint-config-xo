@@ -127,7 +127,6 @@ module.exports = {
 		//   * symbol-description
 		//   * template-curly-spacing
 		//   * yield-star-spacing
-		//   * no-duplicate-imports
 
 		'trailing-comma': [
 			true, {
@@ -257,6 +256,7 @@ module.exports = {
 				before: true,
 				after: true
 			}
-		] // arrow-spacing
+		], // arrow-spacing
+		'no-duplicate-imports': true
 	}
 };
