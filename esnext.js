@@ -13,13 +13,13 @@ module.exports = {
 	],
 	rules: Object.assign({
 		// Not implement:
-		//   * prefer-arrow-callback
 		//   * generator-star-spacing
 		//   * object-shorthand
 		//   * no-await-in-loop
 		//   * prefer-template
 		//   * prefer-numeric-literals
 
+		'ter-prefer-arrow-callback': true, // prefer-arrow-callback
 		'no-var-keyword': true, // no-var
 		'prefer-const': true // No option `destructuring: 'all'`
 	}, baseRules.rules)
