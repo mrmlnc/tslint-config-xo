@@ -1,6 +1,6 @@
 {
   "name": "tslint-config-xo",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "XO config for TSLint.",
   "license": "MIT",
   "repository": "mrmlnc/tslint-config-xo",
@@ -24,22 +24,23 @@
     "XO"
   ],
   "dependencies": {
-    "tslint-eslint-rules": "2.1.0",
-    "tslint-microsoft-contrib": "2.0.12"
+    "tslint-eslint-rules": "3.2.0",
+    "tslint-microsoft-contrib": "4.0.0"
   },
   "devDependencies": {
-    "xo": "^0.16.0",
-    "mocha": "^3.1.0",
-    "tslint": "^3.15.1",
-    "typescript": "^2.0.3"
+    "xo": "^0.17.1",
+    "mocha": "^3.2.0",
+    "tslint": "^4.1.1",
+    "typescript": "^2.1.4"
   },
   "xo": {
     "rules": {
+      "no-var": 2,
       "prefer-const": [2, { "destructuring": "all" }],
       "space-before-function-paren": [2, "never"],
-      "babel/arrow-parens": [2, "always"],
-      "babel/object-curly-spacing": [2, "always"],
-      "babel/generator-star-spacing": [2, "after"]
+      "arrow-parens": [2, "always"],
+      "object-curly-spacing": [2, "always"],
+      "generator-star-spacing": [2, "after"]
     },
     "envs": [
       "node",

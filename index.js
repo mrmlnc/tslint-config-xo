@@ -19,6 +19,9 @@ module.exports = {
 		//   * no-undef
 		//   * new-cap
 		//   * no-dupe-class-members
+		//   * no-unused-vars
+		//   * no-dupe-keys
+		//   * no-unreachable
 
 		// No warn:
 		//   * complexity
@@ -138,7 +141,6 @@ module.exports = {
 		'no-constant-condition': true,
 		'no-control-regex': true,
 		'no-debugger': true,
-		'no-duplicate-key': true, // no-dupe-keys
 		'no-duplicate-case': true,
 		'no-empty-character-class': true,
 		'no-empty': true, // No option: `allowEmptyCatch: true`
@@ -153,16 +155,15 @@ module.exports = {
 		'no-irregular-whitespace': true,
 		'no-regex-spaces': true,
 		'no-sparse-arrays': true,
-		'no-unreachable': true,
 		'no-unsafe-finally': true,
 		'use-isnan': true,
 		'valid-typeof': true, // 'requireStringLiterals' not implemented
 		'no-unexpected-multiline': true,
 		'no-shadowed-variable': true, // block-scoped-var (?)
-		'curly': true,
+		curly: true,
 		'switch-default': true, // default-case
 		'triple-equals': true, // eqeqeq
-		'forin': true, // guard-for-in
+		forin: true, // guard-for-in
 		'no-arg': true, // no-caller
 		'no-eval': true,
 		'no-switch-case-fall-through': true, // no-fallthrough
@@ -179,13 +180,7 @@ module.exports = {
 		'no-duplicate-variable': true, // no-redeclare
 		'no-unused-expression': true, // no-unused-expressions
 		'no-with-statement': true, // no-with
-		'radix': true,
-		'no-unused-variable': [
-			true,
-			{
-				'ignore-pattern': '^_$'
-			}
-		], // no-unused-vars
+		radix: true,
 		'no-use-before-declare': true, // no-use-before-define
 		'brace-style': [
 			true,
@@ -202,8 +197,8 @@ module.exports = {
 			true,
 			'check-format'
 		], // camelcase
-		'eofline': true, // eol-last
-		'indent': [
+		eofline: true, // eol-last
+		indent: [
 			true,
 			'tabs'
 		], // indent + no-mixed-spaces-and-tabs
@@ -216,7 +211,7 @@ module.exports = {
 			true,
 			'as-needed'
 		], // quote-props
-		'quotemark': [
+		quotemark: [
 			true,
 			'single',
 			'jsx-double',
