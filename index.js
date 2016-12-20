@@ -106,7 +106,6 @@ module.exports = {
 		//   * operator-assignment
 		//   * operator-linebreak
 		//   * padded-blocks
-		//   * semi-spacing
 		//   * space-before-blocks
 		//   * space-before-function-paren
 		//   * space-in-parens
@@ -243,6 +242,10 @@ module.exports = {
 			'jsx-double',
 			'avoid-escape'
 		], // quotes + jsx-quotes
+		whitespace: [
+			true,
+			'check-separator'
+		], // semi-spacing without before option
 		semicolon: [
 			true,
 			'always'
