@@ -249,7 +249,8 @@ module.exports = {
 		], // semi
 		'comment-format': [
 			true,
-			'check-space' // 'always'
+			'check-space', // 'always'
+			'check-uppercase' // capitalized-comments
 		], // spaced-comment, but without 'line' & 'block' options
 		'ter-arrow-parens': [
 			true,
