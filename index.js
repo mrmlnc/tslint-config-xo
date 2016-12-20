@@ -107,7 +107,6 @@ module.exports = {
 		//   * operator-linebreak
 		//   * padded-blocks
 		//   * semi-spacing
-		//   * semi
 		//   * space-before-blocks
 		//   * space-before-function-paren
 		//   * space-in-parens
@@ -244,6 +243,10 @@ module.exports = {
 			'jsx-double',
 			'avoid-escape'
 		], // quotes + jsx-quotes
+		semicolon: [
+			true,
+			'always'
+		], // semi
 		'comment-format': [
 			true,
 			'check-space' // 'always'
