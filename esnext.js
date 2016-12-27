@@ -4,7 +4,7 @@ const path = require('path');
 
 const baseRules = require('./index');
 
-const nodeModulesPath = path.join(process.cwd(), 'node_modules');
+const nodeModulesPath = path.dirname(path.dirname(require.resolve('tslint-eslint-rules')));
 
 module.exports = {
 	rulesDirectory: [
