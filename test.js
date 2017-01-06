@@ -19,10 +19,12 @@ describe('Integration', () => {
 		const linter = new tslint.Linter(options);
 
 		linter.lint('base.ts', content, baseRules);
-		const result = linter.getResult();
 
-		assert.equal(result.failures[0].ruleName, 'no-constant-condition');
-		assert.equal(result.failures[1].ruleName, 'indent');
+		assert.deepEqual(linter.getResult().failures.map((item) => item.getRuleName()), [
+			'no-constant-condition',
+			'ter-indent',
+			'indent'
+		]);
 	});
 
 	it('Should apply the ESNEXT rules.', () => {
@@ -30,8 +32,9 @@ describe('Integration', () => {
 		const linter = new tslint.Linter(options);
 
 		linter.lint('esnext.ts', content, nextRules);
-		const result = linter.getResult();
 
-		assert.equal(result.failures[0].ruleName, 'no-var-keyword');
+		assert.deepEqual(linter.getResult().failures.map((item) => item.getRuleName()), [
+			'no-var-keyword'
+		]);
 	});
 });
