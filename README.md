@@ -7,13 +7,13 @@
 Some bad news:
 
   0. This config does not contain TypeScript specific rules. This is adaptation XO configuration to TSLint.
-  1. TSLint does not support error levels. We do not support the following rules: [index.js#L28-L34](https://github.com/mrmlnc/tslint-config-xo/blob/master/index.js#L28-L34)
-  2. Some of the rules currently do not exist in the TSLint. See: [index.js#L37-L130](https://github.com/mrmlnc/tslint-config-xo/blob/master/index.js#L37-L130) and [esnext.js#L18-L22](https://github.com/mrmlnc/tslint-config-xo/blob/master/esnext.js#L18-L22)
+  1. TSLint does not support error levels. We do not support the warning rules (see `// w` rules).
+  2. Some of the rules currently do not exist in the TSLint and other library. See `// -` rules.
 
 ## Install
 
 ```shell
-$ npm install --save-dev tslint-config-xo
+$ npm install -D tslint-config-xo
 ```
 
 ## Usage
