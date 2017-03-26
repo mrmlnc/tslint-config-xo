@@ -20,6 +20,7 @@ module.exports = {
 			}
 		], // + comma-dangle
 		// - no-await-in-loop
+		// - no-compare-neg-zero
 		'no-conditional-assignment': true, // + no-cond-assign
 		'no-constant-condition': true, // + no-constant-condition
 		'no-control-regex': true, // + no-control-regex
@@ -124,6 +125,7 @@ module.exports = {
 		// - no-void
 		// - no-warning-comments
 		'no-with-statement': true, // + no-with
+		// - prefer-promise-reject-errors,
 		radix: true, // + radix
 		// - wrap-iife
 		// - yoda
@@ -183,7 +185,7 @@ module.exports = {
 		], // + indent
 		// - key-spacing
 		// - keyword-spacing
-		'linebreak-style': 'LF', //  linebreak-style
+		'linebreak-style': 'LF', // + linebreak-style
 		// - max-depth
 		// - max-nested-callbacks
 		// - max-params
@@ -197,6 +199,7 @@ module.exports = {
 			true,
 			'tabs'
 		], // + no-mixed-spaces-and-tabs
+		// - no-multi-assign
 		'no-consecutive-blank-lines': true, // + no-multiple-empty-lines
 		// - no-negated-condition
 		// - no-new-object
@@ -239,7 +242,10 @@ module.exports = {
 				asyncArrow: 'always'
 			}
 		], // + space-before-function-paren
-		// - space-in-parens
+		'space-in-parens': [
+			true,
+			'never'
+		],
 		// - space-infix-ops
 		// - space-unary-ops
 		'comment-format': [
@@ -247,6 +253,7 @@ module.exports = {
 			'check-space', // 'always'
 			'check-uppercase' // + capitalized-comments
 		], // + spaced-comment
+		// - template-tag-spacing
 		// - unicode-bom
 		'ter-arrow-parens': [
 			true,
