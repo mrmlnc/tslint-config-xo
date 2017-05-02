@@ -103,7 +103,6 @@ module.exports = {
 		// - no-multi-str
 		// - no-new-func
 		'no-construct': true, // + no-new-wrappers
-		'no-unused-new': true, // + no-new
 		// - no-octal-escape
 		// x no-octal
 		// - no-proto
@@ -116,7 +115,7 @@ module.exports = {
 		// - no-sequences
 		'no-string-throw': true, // + no-throw-literal
 		// - no-unmodified-loop-condition
-		'no-unused-expression': true, // - no-unused-expressions
+		'no-unused-expression': true, // + no-unused-expressions + no-new
 		// - no-unused-labels
 		// - no-useless-call
 		// - no-useless-concat
