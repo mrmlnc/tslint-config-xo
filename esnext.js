@@ -22,7 +22,12 @@ module.exports = {
 
 		'ter-prefer-arrow-callback': true, // + prefer-arrow-callback
 		'no-var-keyword': true, // + no-var
-		'prefer-const': true, // + No option `destructuring: 'all'`
+		'prefer-const': [
+			true,
+			{
+				destructuring: 'all'
+			}
+		],
 		'prefer-template': true
 	}, baseRules.rules)
 };
