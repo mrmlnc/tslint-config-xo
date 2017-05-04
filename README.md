@@ -1,5 +1,7 @@
 # tslint-config-xo
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mrmlnc/tslint-config-xo.svg)](https://greenkeeper.io/)
+
 > Adaptation [XO](https://github.com/sindresorhus/xo) configuration for [TSLint](https://github.com/palantir/tslint).
 
 ## Disclaimer
