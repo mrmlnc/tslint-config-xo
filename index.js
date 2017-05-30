@@ -161,7 +161,10 @@ module.exports = {
 		// - comma-style
 		// - computed-property-spacing
 		eofline: true, // + eol-last
-		// - func-call-spacing
+		'ter-func-call-spacing': [
+			true,
+			'never'
+		],
 		// - func-name-matching
 		// - func-names
 		'ter-indent': [
