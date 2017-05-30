@@ -13,10 +13,22 @@ const options = {
 	rulesDirectory: './'
 };
 
+function formatRules(rules) {
+	const obj = new Map();
+
+	Object.keys(rules).forEach((rule) => {
+		obj.set(rule, rules[rule]);
+	});
+
+	return obj;
+}
+
 describe('Integration', () => {
 	it('Should apply the BASE rules.', () => {
 		const content = fs.readFileSync('./fixtures/base.ts', 'utf8').toString();
 		const linter = new tslint.Linter(options);
+
+		baseRules.rules = formatRules(baseRules.rules);
 
 		linter.lint('base.ts', content, baseRules);
 
@@ -30,6 +42,8 @@ describe('Integration', () => {
 	it('Should apply the ESNEXT rules.', () => {
 		const content = fs.readFileSync('./fixtures/esnext.ts', 'utf8').toString();
 		const linter = new tslint.Linter(options);
+
+		nextRules.rules = formatRules(nextRules.rules);
 
 		linter.lint('esnext.ts', content, nextRules);
 
