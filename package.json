@@ -25,15 +25,15 @@
   ],
   "dependencies": {
     "tslint-eslint-rules": "4.1.1",
-    "tslint-immutable": "3.4.2",
+    "tslint-immutable": "4.0.1",
     "tslint-microsoft-contrib": "5.0.0",
     "vrsource-tslint-rules": "5.1.0"
   },
   "devDependencies": {
     "xo": "^0.18.2",
     "mocha": "^3.4.2",
-    "tslint": "^5.3.2",
-    "typescript": "^2.3.3"
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.4"
   },
   "xo": {
     "rules": {
