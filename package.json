@@ -12,7 +12,8 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "xo && mocha"
+    "lint": "xo --cache *.js",
+    "test": "npm run lint && mocha"
   },
   "files": [
     "index.js",
@@ -24,16 +25,18 @@
     "XO"
   ],
   "dependencies": {
-    "tslint-eslint-rules": "4.1.1",
-    "tslint-immutable": "4.0.1",
-    "tslint-microsoft-contrib": "5.0.0",
-    "vrsource-tslint-rules": "5.1.0"
+    "tslint-divid": "^1.0.4",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-microsoft-contrib": "^5.0.0",
+    "vrsource-tslint-rules": "^5.1.0"
   },
   "devDependencies": {
-    "xo": "^0.18.2",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.29",
     "mocha": "^3.4.2",
     "tslint": "^5.4.3",
-    "typescript": "^2.3.4"
+    "typescript": "^2.3.4",
+    "xo": "^0.18.2"
   },
   "xo": {
     "rules": {

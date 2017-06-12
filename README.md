@@ -6,9 +6,8 @@
 
 Some bad news:
 
-  0. This config does not contain TypeScript specific rules. This is adaptation XO configuration to TSLint.
-  1. TSLint does not support error levels. We do not support the warning rules (see `// w` rules).
-  2. Some of the rules currently do not exist in the TSLint and other library. See `// -` rules.
+  * This config does not contain TypeScript specific rules. This is adaptation XO configuration to TSLint.
+  * Some of the rules currently do not exist in the TSLint and other library. See `@unavailable`.
 
 ## Install
 
@@ -17,6 +16,7 @@ $ npm install -D tslint-config-xo
 ```
 
 ## Usage
+
 
 Create `tslint.json` file and add `extends` field:
 
@@ -41,7 +41,43 @@ This package also exposes `xo/esnext` if you want ES2015+ rules:
   * [buzinas/tslint-eslint-rules](https://github.com/buzinas/tslint-eslint-rules)
   * [Microsoft/tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib)
   * [vrsource/vrsource-tslint-rules](https://github.com/vrsource/vrsource-tslint-rules)
-  * [jonaskello/tslint-immutable](https://github.com/jonaskello/tslint-immutable)
+  * [jonaskello/tslint-divid](https://github.com/jonaskello/tslint-divid)
+
+## Development
+
+Requirements:
+
+  * Node.js 4+
+  * npm 2+
+
+### Quick Start
+
+```shell
+$ git clone https://github.com/mrmlnc/tslint-config-xo
+$ npm i
+$ npm test
+```
+
+### Documentation
+
+```shell
+$ npm run docs
+```
+
+### Markers
+
+We use JSDoc-like syntax for mark rules:
+
+```js
+/**
+ * @eslint {comma-dangle}
+ * @tslint {trailing-comma}
+ * @provider {tslint}
+ * @missed {requireStringLiterals, allowEmptyCatch}
+ * @unavailable – The rule is currently unavailable.
+ * @notApplicable – The rule is not applicable to Typescript.
+ */
+```
 
 ## Changelog
 
