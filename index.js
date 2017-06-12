@@ -26,6 +26,12 @@ module.exports = {
 		],
 
 		/**
+		 * @eslint {for-direction}
+		 * @unavailable
+		 */
+		// 'for-direction': null,
+
+		/**
 		 * @eslint {no-await-in-loop}
 		 * @unavailable
 		 */
@@ -121,7 +127,7 @@ module.exports = {
 		'no-extra-semi': true,
 
 		/**
-		 * @eslint {no-extra-semi}
+		 * @eslint {no-func-assign}
 		 * @notApplicable
 		 */
 		// 'no-func-assign': null,
@@ -674,6 +680,12 @@ module.exports = {
 		'no-use-before-declare': true,
 
 		/**
+		 * @eslint {no-buffer-constructor}
+		 * @unavailable
+		 */
+		// 'no-buffer-constructor': null,
+
+		/**
 		 * @eslint {handle-callback-err}
 		 * @tslint {handle-callback-err}
 		 * @provider {tslint-eslint-rules}
@@ -1020,6 +1032,12 @@ module.exports = {
 		],
 
 		/**
+		 * @eslint {semi-style}
+		 * @unavailable
+		 */
+		// 'semi-style': null,
+
+		/**
 		 * @eslint {semi}
 		 * @tslint {semicolon}
 		 * @provider {tslint}
@@ -1058,6 +1076,12 @@ module.exports = {
 		 * @unavailable
 		 */
 		// 'space-unary-ops': null,
+
+		/**
+		 * @eslint {switch-colon-spacing}
+		 * @unavailable
+		 */
+		// 'switch-colon-spacing': null,
 
 		/**
 		 * @eslint {template-tag-spacing}
