@@ -32,6 +32,12 @@ module.exports = {
 		// 'for-direction': null,
 
 		/**
+		 * @eslint {getter-return}
+		 * @unavailable
+		 */
+		// 'getter-return': null,
+
+		/**
 		 * @eslint {no-await-in-loop}
 		 * @unavailable
 		 */
@@ -680,12 +686,6 @@ module.exports = {
 		'no-use-before-declare': true,
 
 		/**
-		 * @eslint {no-buffer-constructor}
-		 * @unavailable
-		 */
-		// 'no-buffer-constructor': null,
-
-		/**
 		 * @eslint {handle-callback-err}
 		 * @tslint {handle-callback-err}
 		 * @provider {tslint-eslint-rules}
@@ -693,6 +693,12 @@ module.exports = {
 		'handle-callback-err': {
 			severity: 'warning'
 		},
+
+		/**
+		 * @eslint {no-buffer-constructor}
+		 * @unavailable
+		 */
+		// 'no-buffer-constructor': null,
 
 		/**
 		 * @eslint {no-mixed-requires}

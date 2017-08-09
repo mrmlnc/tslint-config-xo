@@ -15,6 +15,8 @@ module.exports = {
 	},
 	rules: {
 		'comma-dangle': ['error', 'never'],
+		'for-direction': 'error',
+		'getter-return': 'error',
 		'no-await-in-loop': 'error',
 		'no-compare-neg-zero': 'error',
 		'no-cond-assign': 'error',
@@ -126,6 +128,7 @@ module.exports = {
 		// Disabled because of https://github.com/eslint/eslint/issues/3420
 		// 'callback-return': ['warn', ['cb', 'callback', 'next', 'done']],
 		'handle-callback-err': 'warn',
+		'no-buffer-constructor': 'error',
 		'no-mixed-requires': ['error', {
 			grouping: true,
 			allowCall: true
@@ -220,6 +223,7 @@ module.exports = {
 			before: false,
 			after: true
 		}],
+		'semi-style': ['error', 'last'],
 		semi: ['error', 'always'],
 		'space-before-blocks': ['error', 'always'],
 		'space-before-function-paren': ['error', {
@@ -238,6 +242,10 @@ module.exports = {
 				markers: ['!'],
 				balanced: true
 			}
+		}],
+		'switch-colon-spacing': ['error', {
+			after: true,
+			before: false
 		}],
 		'template-tag-spacing': ['error', 'never'],
 		'unicode-bom': ['error', 'never'],
