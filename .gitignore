@@ -6,11 +6,14 @@ npm-debug.log*
 # IDE & editors
 .idea
 .vscode
-typings/
-jsconfig.json
 
 # Dependency directory
 node_modules/
 
 # Compiled and tempory files
 .tmp/
+out/
+
+# Other files
+package-lock.json
+yarn.lock
