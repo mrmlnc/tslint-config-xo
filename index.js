@@ -1063,12 +1063,12 @@ module.exports = {
 
 		/**
 		 * @eslint {space-in-parens}
-		 * @tslint {space-in-parens}
-		 * @provider {tslint-eslint-rules}
+		 * @tslint {space-within-parens}
+		 * @provider {tslint}
 		 */
-		'space-in-parens': [
+		'space-within-parens': [
 			true,
-			'never'
+			0
 		],
 
 		/**
