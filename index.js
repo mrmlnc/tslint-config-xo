@@ -345,7 +345,7 @@ module.exports = {
 		 * @eslint {no-else-return}
 		 * @unavailable
 		 */
-		// 'no-else-after-return': null,
+		// 'no-else-return': null,
 
 		/**
 		 * @eslint {no-empty-pattern}
@@ -674,9 +674,15 @@ module.exports = {
 
 		/**
 		 * @eslint {no-unused-vars}
-		 * @core
+		 * @tslint {no-unused-variable}
+		 * @provider {tslint}
 		 */
-		// 'no-unused-vars': null,
+		'no-unused-variable': [
+			true,
+			{
+				'ignore-pattern': '^_$'
+			}
+		],
 
 		/**
 		 * @eslint {no-use-before-define}
