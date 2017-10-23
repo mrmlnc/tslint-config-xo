@@ -754,15 +754,16 @@ module.exports = {
 
 		/**
 		 * @eslint {brace-style}
-		 * @tslint {brace-style}
-		 * @provider {tslint-eslint-rules}
+		 * @tslint {one-line}
+		 * @provider {tslint}
 		 */
-		'brace-style': [
+		'one-line': [
 			true,
-			'1tbs',
-			{
-				allowSingleLine: false
-			}
+			'check-catch',
+			'check-finally',
+			'check-else',
+			'check-open-brace',
+			'check-whitespace'
 		],
 
 		/**
