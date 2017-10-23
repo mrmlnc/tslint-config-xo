@@ -737,6 +737,12 @@ module.exports = {
 		// 'no-restricted-modules': null,
 
 		/**
+		 * @eslint {array-bracket-newline}
+		 * @unavailable
+		 */
+		// 'array-bracket-newline': null,
+
+		/**
 		 * @eslint {array-bracket-spacing}
 		 * @tslint {array-bracket-spacing}
 		 * @provider {tslint-eslint-rules}
@@ -828,6 +834,12 @@ module.exports = {
 		// 'func-names': null,
 
 		/**
+		 * @eslint {function-paren-newline}
+		 * @unavailable
+		 */
+		// 'function-paren-newline': null,
+
+		/**
 		 * @eslint {indent}
 		 * @tslint {ter-indent}
 		 * @provider {tslint-eslint-rules}
@@ -881,6 +893,12 @@ module.exports = {
 		 * @provider {tslint}
 		 */
 		'linebreak-style': 'LF',
+
+		/**
+		 * @eslint {lines-between-class-members}
+		 * @unavailable
+		 */
+		// 'lines-between-class-members': null,
 
 		/**
 		 * @eslint {max-depth}
