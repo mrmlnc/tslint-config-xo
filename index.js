@@ -521,9 +521,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-return-await}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-return-await': null,
+		'no-return-await': true,
 
 		/**
 		 * @eslint {no-script-url}
