@@ -8,6 +8,7 @@ Some bad news:
 
   * This config does not contain TypeScript specific rules. This is adaptation XO configuration to TSLint.
   * Some of the rules currently do not exist in the TSLint and other library. See `@unavailable`.
+  * See `@unavailable` directive in the `index.js` and `next.js` files.
 
 ## Install
 
