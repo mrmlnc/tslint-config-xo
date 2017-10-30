@@ -42,8 +42,8 @@ You can overwrite rules by `rules` field:
 {
   "extends": "tslint-config-xo/esnext",
   "rules": {
-    // Your rules here
-   }
+     // Your rules here
+  }
 }
 ```
 
