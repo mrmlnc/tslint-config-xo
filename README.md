@@ -36,6 +36,17 @@ This package also exposes `xo/esnext` if you want ES2015+ rules:
 }
 ```
 
+You can overwrite rules by `rules` field:
+
+```json5
+{
+  "extends": "tslint-config-xo/esnext",
+  "rules": {
+    // Your rules here
+   }
+}
+```
+
 ## We use
 
   * [buzinas/tslint-eslint-rules](https://github.com/buzinas/tslint-eslint-rules)
