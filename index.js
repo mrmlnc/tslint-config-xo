@@ -773,7 +773,9 @@ module.exports = {
 		 */
 		'variable-name': [
 			true,
-			'check-format'
+			"check-format",
+			"allow-leading-underscore",
+			"allow-trailing-underscore"
 		],
 
 		/**
