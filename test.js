@@ -5,7 +5,7 @@ const assert = require('assert');
 const tslint = require('tslint');
 
 const nextRules = require('./esnext');
-const baseRules = require('./index');
+const baseRules = require('.');
 
 const options = {
 	fix: false,

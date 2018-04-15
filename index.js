@@ -281,14 +281,9 @@ module.exports = {
 		/**
 		 * @eslint {dot-notation}
 		 * @tslint {dot-notation}
-		 * @provider {vrsource-tslint-rules}
+		 * @provider {tslint}
 		 */
-		'dot-notation': [
-			true,
-			{
-				'allow-pattern': '^[a-z]+(_[a-z]+)+$'
-			}
-		],
+		'no-string-literal': true,
 
 		/**
 		 * @eslint {dot-location}
@@ -773,9 +768,9 @@ module.exports = {
 		 */
 		'variable-name': [
 			true,
-			"check-format",
-			"allow-leading-underscore",
-			"allow-trailing-underscore"
+			'check-format',
+			'allow-leading-underscore',
+			'allow-trailing-underscore'
 		],
 
 		/**
