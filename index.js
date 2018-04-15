@@ -1032,9 +1032,10 @@ module.exports = {
 
 		/**
 		 * @eslint {padded-blocks}
-		 * @unavailable
+		 * @tslint {ter-padded-blocks}
+		 * @provider {tslint-eslint-rules}
 		 */
-		// 'padded-blocks': null,
+		'ter-padded-blocks': true,
 
 		/**
 		 * @eslint {quote-props}
