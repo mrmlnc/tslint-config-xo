@@ -670,14 +670,10 @@ module.exports = {
 		/**
 		 * @eslint {no-unused-vars}
 		 * @tslint {no-unused-variable}
-		 * @provider {tslint}
+		 * @typescript {noUnusedLocals, noUnusedParameters}
+		 * @provider {typescript}
 		 */
-		'no-unused-variable': [
-			true,
-			{
-				'ignore-pattern': '^_$'
-			}
-		],
+		// 'no-unused-variable': null
 
 		/**
 		 * @eslint {no-use-before-define}
