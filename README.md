@@ -83,7 +83,8 @@ We use JSDoc-like syntax for mark rules:
 /**
  * @eslint {comma-dangle}
  * @provider {tslint}
- * @missed {requireStringLiterals, allowEmptyCatch}
+ * @missed {requireStringLiterals}
+ * @missed {allowEmptyCatch}
  * @unavailable – The rule is currently unavailable.
  * @notApplicable – The rule is not applicable to Typescript.
  */
