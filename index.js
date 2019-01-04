@@ -701,15 +701,17 @@ module.exports = {
 
 		/**
 		 * @eslint {no-restricted-imports}
-		 * @unavailable
-		 */
-		// 'no-restricted-imports': null,
-
-		/**
 		 * @eslint {no-restricted-modules}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-restricted-modules': null,
+		'import-blacklist': [
+			true,
+			'domain',
+			'freelist',
+			'smalloc',
+			'sys',
+			'colors'
+		],
 
 		/**
 		 * @eslint {array-bracket-newline}
