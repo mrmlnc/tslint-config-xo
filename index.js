@@ -656,7 +656,8 @@ module.exports = {
 
 		/**
 		 * @eslint {no-unused-vars}
-		 * @typescript {noUnusedLocals, noUnusedParameters}
+		 * @typescript {noUnusedLocals}
+		 * @typescript {noUnusedParameters}
 		 * @provider {typescript}
 		 */
 		// 'no-unused-variable': null
