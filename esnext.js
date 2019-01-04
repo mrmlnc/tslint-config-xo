@@ -33,7 +33,12 @@ module.exports = {
 		 * @tslint {ter-prefer-arrow-callback}
 		 * @provider {tslint-eslint-rules}
 		 */
-		'ter-prefer-arrow-callback': true,
+		'ter-prefer-arrow-callback': [
+			true,
+			{
+				allowNamedFunctions: true
+			}
+		],
 
 		/**
 		 * @eslint {prefer-const}
