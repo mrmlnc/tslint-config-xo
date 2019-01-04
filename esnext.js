@@ -1,18 +1,9 @@
 'use strict';
 
-const path = require('path');
-
 const baseRules = require('./index');
 
-const nodeModulesPath = path.join(require.resolve('tslint-eslint-rules'), '..', '..');
-
 module.exports = {
-	rulesDirectory: [
-		path.join(nodeModulesPath, 'tslint-eslint-rules/dist/rules'),
-		path.join(nodeModulesPath, 'tslint-microsoft-contrib'),
-		path.join(nodeModulesPath, 'vrsource-tslint-rules/rules'),
-		path.join(nodeModulesPath, 'tslint-divid/rules')
-	],
+	rulesDirectory: baseRules.rulesDirectory,
 	rules: Object.assign({
 		/**
 		 * @eslint {no-var}
