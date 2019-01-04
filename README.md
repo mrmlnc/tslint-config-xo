@@ -82,7 +82,6 @@ We use JSDoc-like syntax for mark rules:
 ```js
 /**
  * @eslint {comma-dangle}
- * @tslint {trailing-comma}
  * @provider {tslint}
  * @missed {requireStringLiterals, allowEmptyCatch}
  * @unavailable – The rule is currently unavailable.
