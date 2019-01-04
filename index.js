@@ -905,9 +905,9 @@ module.exports = {
 
 		/**
 		 * @eslint {max-statements-per-line}
-		 * @unavailable
+		 * @provider {tslint-sonarts}
 		 */
-		// 'max-statements-per-line': null,
+		'no-statements-same-line': true,
 
 		/**
 		 * @eslint {new-cap}
