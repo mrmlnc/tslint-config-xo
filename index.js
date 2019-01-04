@@ -14,7 +14,8 @@ module.exports = {
 		getRulePackageDirectory('tslint-eslint-rules', 'dist/rules'),
 		getRulePackageDirectory('tslint-microsoft-contrib'),
 		getRulePackageDirectory('vrsource-tslint-rules', 'rules'),
-		getRulePackageDirectory('tslint-divid', 'rules')
+		getRulePackageDirectory('tslint-divid', 'rules'),
+		getRulePackageDirectory('tslint-consistent-codestyle')
 	],
 	rules: {
 		/**
@@ -331,9 +332,12 @@ module.exports = {
 
 		/**
 		 * @eslint {no-else-return}
-		 * @unavailable
+		 * @provider {tslint-consistent-codestyle}
 		 */
-		// 'no-else-return': null,
+		'no-else-after-return': [
+			true,
+			'allow-else-if'
+		],
 
 		/**
 		 * @eslint {no-empty-pattern}
