@@ -12,7 +12,9 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "lint": "xo --cache *.js",
+    "lint:js": "xo --cache *.js",
+    "lint:rules": "node ./lint-rules.js",
+    "lint": "npm run lint:js && npm run lint:rules",
     "test": "npm run lint && mocha"
   },
   "files": [

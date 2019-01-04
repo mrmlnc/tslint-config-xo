@@ -457,7 +457,9 @@ module.exports = {
 		// 'no-multi-str': null,
 
 		/**
-		 * @eslint {no-new-func,no-array-constructor,no-new-object}
+		 * @eslint {no-new-func}
+		 * @eslint {no-array-constructor}
+		 * @eslint {no-new-object}
 		 * @tslint {prefer-literal}
 		 * @provider {vrsource-tslint-rules}
 		 */
@@ -476,7 +478,8 @@ module.exports = {
 		'no-construct': true,
 
 		/**
-		 * @eslint {no-new,no-unused-expressions}
+		 * @eslint {no-new}
+		 * @eslint {no-unused-expressions}
 		 * @tslint {no-unused-expression}
 		 * @provider {tslint}
 		 */
@@ -770,7 +773,8 @@ module.exports = {
 		],
 
 		/**
-		 * @eslint {capitalized-comments,spaced-comment}
+		 * @eslint {capitalized-comments}
+		 * @eslint {spaced-comment}
 		 * @tslint {comment-format}
 		 * @provider {tslint}
 		 */
@@ -858,7 +862,8 @@ module.exports = {
 		],
 
 		/**
-		 * @eslint {jsx-quotes,quotes}
+		 * @eslint {jsx-quotes}
+		 * @eslint {quotes}
 		 * @tslint {quotemark}
 		 * @provider {tslint}
 		 */
@@ -1008,7 +1013,8 @@ module.exports = {
 		],
 
 		/**
-		 * @eslint {one-var,one-var-declaration-per-line}
+		 * @eslint {one-var}
+		 * @eslint {one-var-declaration-per-line}
 		 * @tslint {one-variable-per-declaration}
 		 * @provider {tslint}
 		 */
@@ -1044,7 +1050,10 @@ module.exports = {
 		],
 
 		/**
-		 * @eslint {semi-spacing,space-before-blocks,space-infix-ops}
+		 * @eslint {semi-spacing}
+		 * @eslint {semi-spacing}
+		 * @eslint {space-before-blocks}
+		 * @eslint {space-infix-ops}
 		 * @tslint {whitespace}
 		 * @provider {tslint}
 		 * @missed {before}
