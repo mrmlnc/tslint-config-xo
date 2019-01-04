@@ -962,6 +962,7 @@ module.exports = {
 
 		/**
 		 * @eslint {no-restricted-syntax}
+		 * @duplicate {no-with}
 		 * @unavailable
 		 */
 		// 'no-restricted-syntax': null,
