@@ -2,14 +2,19 @@
 
 const path = require('path');
 
-const nodeModulesPath = path.join(require.resolve('tslint-eslint-rules'), '..', '..');
+function getRulePackageDirectory(name, suffix) {
+	const packagePath = require.resolve(name);
+	const nodeModulesPath = path.dirname(packagePath);
+
+	return path.join(nodeModulesPath, suffix || '');
+}
 
 module.exports = {
 	rulesDirectory: [
-		path.join(nodeModulesPath, 'tslint-eslint-rules/dist/rules'),
-		path.join(nodeModulesPath, 'tslint-microsoft-contrib'),
-		path.join(nodeModulesPath, 'vrsource-tslint-rules/rules'),
-		path.join(nodeModulesPath, 'tslint-divid/rules')
+		getRulePackageDirectory('tslint-eslint-rules', 'dist/rules'),
+		getRulePackageDirectory('tslint-microsoft-contrib'),
+		getRulePackageDirectory('vrsource-tslint-rules', 'rules'),
+		getRulePackageDirectory('tslint-divid', 'rules')
 	],
 	rules: {
 		/**
