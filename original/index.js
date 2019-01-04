@@ -2,11 +2,10 @@
 
 module.exports = {
 	parserOptions: {
-		ecmaVersion: 2017,
+		ecmaVersion: 2019,
 		sourceType: 'module',
 		ecmaFeatures: {
-			jsx: true,
-			experimentalObjectRestSpread: true
+			jsx: true
 		}
 	},
 	env: {
@@ -20,6 +19,7 @@ module.exports = {
 		],
 		'for-direction': 'error',
 		'getter-return': 'error',
+		'no-async-promise-executor': 'error',
 		'no-await-in-loop': 'error',
 		'no-compare-neg-zero': 'error',
 		'no-cond-assign': 'error',
@@ -31,7 +31,6 @@ module.exports = {
 		'no-duplicate-case': 'error',
 		'no-empty-character-class': 'error',
 		'no-empty': [
-
 			'error',
 			{
 				allowEmptyCatch: true
@@ -49,6 +48,7 @@ module.exports = {
 		'no-inner-declarations': 'error',
 		'no-invalid-regexp': 'error',
 		'no-irregular-whitespace': 'error',
+		'no-misleading-character-class': 'error',
 		'no-obj-calls': 'error',
 		'no-prototype-builtins': 'error',
 		'no-regex-spaces': 'error',
@@ -57,9 +57,9 @@ module.exports = {
 		'no-unreachable': 'error',
 		'no-unsafe-finally': 'error',
 		'no-unsafe-negation': 'error',
+		'require-atomic-updates': 'error',
 		'use-isnan': 'error',
 		'valid-typeof': [
-
 			'error',
 			{
 				requireStringLiterals: false
@@ -145,6 +145,12 @@ module.exports = {
 			}
 		],
 		radix: 'error',
+
+		// Disabled for now as it causes too much churn
+		// TODO: Enable it in the future when I have time to deal with
+		// the churn and the rule is stable and has an autofixer
+		// 'require-unicode-regexp': 'error',
+
 		'wrap-iife': [
 			'error',
 			'inside',
@@ -173,10 +179,6 @@ module.exports = {
 				ignoreRestSiblings: true,
 				argsIgnorePattern: '^_$'
 			}
-		],
-		'no-use-before-define': [
-			'error',
-			'nofunc'
 		],
 		// Disabled because of https://github.com/eslint/eslint/issues/3420
 		// 'callback-return': ['warn', ['cb', 'callback', 'next', 'done']],
@@ -215,6 +217,10 @@ module.exports = {
 			'error',
 			'never'
 		],
+		'array-element-newline': [
+			'error',
+			'consistent'
+		],
 		'brace-style': [
 			'error',
 			'1tbs',
@@ -233,7 +239,7 @@ module.exports = {
 			'always',
 			{
 				// You can also ignore this rule by wrapping the first word in quotes
-				ignorePattern: 'pragma|ignore',
+				ignorePattern: 'pragma|ignore|prettier-ignore',
 				ignoreInlineComments: true,
 				ignoreConsecutiveComments: true
 			}
@@ -258,28 +264,21 @@ module.exports = {
 			'error',
 			'never'
 		],
-		'func-name-matching': 'error',
+		'func-name-matching': [
+			'error',
+			{
+				considerPropertyDescriptor: true
+			}
+		],
 		'func-names': [
 			'error',
 			'never'
-		],
-		'function-paren-newline': [
-			'error',
-			'multiline'
 		],
 		indent: [
 			'error',
 			'tab',
 			{
-				SwitchCase: 1,
-				ignoredNodes: [
-
-					// We ignore this as it requires weird indentation in some cases:
-					// https://gist.github.com/sindresorhus/282415ce6ca759a63c185f58db7bf2c3
-					// TODO: Somebody please open an issue on ESLint about this.
-					// I'm not going to, as I have wasted to much time on their issue tracker.
-					'CallExpression'
-				]
+				SwitchCase: 1
 			}
 		],
 		'jsx-quotes': 'error',
@@ -292,7 +291,7 @@ module.exports = {
 		],
 		'keyword-spacing': 'error',
 		'linebreak-style': [
-			'error',
+			process.platform === 'win32' ? 'off' : 'error',
 			'unix'
 		],
 		'lines-between-class-members': [
@@ -343,7 +342,7 @@ module.exports = {
 			'error',
 			'never'
 		],
-		// Disabled because of https://github.com/sindresorhus/eslint-config-xo/issues/27
+		// Disabled because of https://github.com/xojs/eslint-config-xo/issues/27
 		// 'object-property-newline': 'error',
 		'one-var': [
 			'error',
@@ -362,16 +361,21 @@ module.exports = {
 			'error',
 			'never'
 		],
+		'padding-line-between-statements': [
+			'error',
+			{
+				blankLine: 'always',
+				prev: 'multiline-block-like',
+				next: '*'
+			}
+		],
 		'quote-props': [
 			'error',
 			'as-needed'
 		],
 		quotes: [
 			'error',
-			'single',
-			{
-				allowTemplateLiterals: true
-			}
+			'single'
 		],
 		'semi-spacing': [
 			'error',
@@ -418,7 +422,8 @@ module.exports = {
 					],
 					markers: [
 						'!',
-						'/'
+						'/',
+						'=>'
 					]
 				},
 				block: {
@@ -484,6 +489,14 @@ module.exports = {
 		'yield-star-spacing': [
 			'error',
 			'both'
+		],
+		'valid-jsdoc': [
+			'warn',
+			{
+				requireReturn: false,
+				requireParamDescription: true,
+				requireReturnDescription: true
+			}
 		]
 	}
 };

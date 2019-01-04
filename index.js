@@ -38,6 +38,12 @@ module.exports = {
 		// 'getter-return': null,
 
 		/**
+		 * @eslint {no-async-promise-executor}
+		 * @unavailable
+		 */
+		// 'no-async-promise-executor': null,
+
+		/**
 		 * @eslint {no-await-in-loop}
 		 * @unavailable
 		 */
@@ -163,6 +169,12 @@ module.exports = {
 		'no-irregular-whitespace': true,
 
 		/**
+		 * @eslint {no-misleading-character-class}
+		 * @unavailable
+		 */
+		// 'no-misleading-character-class': null,
+
+		/**
 		 * @eslint {no-obj-calls}
 		 * @notApplicable
 		 */
@@ -213,6 +225,12 @@ module.exports = {
 		 * @unavailable
 		 */
 		// 'no-unsafe-negation': null,
+
+		/**
+		 * @eslint {require-atomic-updates}
+		 * @unavailable
+		 */
+		// 'require-atomic-updates': null,
 
 		/**
 		 * @eslint {use-isnan}
@@ -679,13 +697,6 @@ module.exports = {
 		// 'no-unused-variable': null
 
 		/**
-		 * @eslint {no-use-before-define}
-		 * @tslint {no-use-before-declare}
-		 * @provider {tslint}
-		 */
-		'no-use-before-declare': true,
-
-		/**
 		 * @eslint {handle-callback-err}
 		 * @tslint {handle-callback-err}
 		 * @provider {tslint-eslint-rules}
@@ -745,6 +756,12 @@ module.exports = {
 			true,
 			'never'
 		],
+
+		/**
+		 * @eslint {array-element-newline}
+		 * @unavailable
+		 */
+		// 'array-element-newline': null,
 
 		/**
 		 * @eslint {brace-style}
@@ -830,12 +847,6 @@ module.exports = {
 		 * @unavailable
 		 */
 		// 'func-names': null,
-
-		/**
-		 * @eslint {function-paren-newline}
-		 * @unavailable
-		 */
-		// 'function-paren-newline': null,
 
 		/**
 		 * @eslint {indent}
@@ -1040,6 +1051,12 @@ module.exports = {
 		'ter-padded-blocks': true,
 
 		/**
+		 * @eslint {padding-line-between-statements}
+		 * @unavailable
+		 */
+		// 'padding-line-between-statements': null,
+
+		/**
 		 * @eslint {quote-props}
 		 * @tslint {object-literal-key-quotes}
 		 * @provider {tslint}
@@ -1241,5 +1258,11 @@ module.exports = {
 		 * @unavailable
 		 */
 		// 'yield-star-spacing': null,
+
+		/**
+		 * @eslint {valid-jsdoc}
+		 * @unavailable
+		 */
+		// 'valid-jsdoc': null,
 	}
 };
