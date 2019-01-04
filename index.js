@@ -889,9 +889,12 @@ module.exports = {
 
 		/**
 		 * @eslint {max-params}
-		 * @unavailable
+		 * @provider {vrsource-tslint-rules}
 		 */
-		// 'max-params': null,
+		'max-params': {
+			options: 4,
+			severity: 'warning'
+		},
 
 		/**
 		 * @eslint {max-statements-per-line}
