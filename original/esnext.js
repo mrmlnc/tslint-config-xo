@@ -5,11 +5,16 @@ module.exports = {
 	extends: path.join(__dirname, 'index.js'),
 	rules: {
 		'no-var': 'error',
-		'object-shorthand': ['error', 'always'],
+		'object-shorthand': [
+			'error',
+			'always'
+		],
 		'prefer-arrow-callback': 'error',
-		'prefer-const': ['error', {
-			destructuring: 'all'
-		}],
+		'prefer-const': [
+			'error', {
+				destructuring: 'all'
+			}
+		],
 		'prefer-numeric-literals': 2
 
 		// Disabled since latest Node.js LTS doesn't yet support it
