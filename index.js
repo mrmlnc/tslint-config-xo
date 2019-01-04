@@ -1176,9 +1176,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-useless-constructor}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-useless-constructor': null,
+		'unnecessary-constructor': true,
 
 		/**
 		 * @eslint {no-useless-rename}
