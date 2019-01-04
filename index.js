@@ -532,9 +532,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-sequences}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-sequences': null,
+		'ban-comma-operator': true,
 
 		/**
 		 * @eslint {no-throw-literal}
