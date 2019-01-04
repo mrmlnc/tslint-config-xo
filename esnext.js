@@ -52,5 +52,23 @@ module.exports = {
 		 * @unavailable
 		 */
 		// 'prefer-numeric-literals': null,
+
+		/**
+		 * @eslint {prefer-rest-params}
+		 * @unavailable
+		 */
+		// 'prefer-rest-params': null,
+
+		/**
+		 * @eslint {prefer-spread}
+		 * @unavailable
+		 */
+		// 'prefer-spread': null,
+
+		/**
+		 * @eslint {prefer-destructuring}
+		 * @unavailable
+		 */
+		// 'prefer-destructuring': null,
 	}, baseRules.rules)
 };
