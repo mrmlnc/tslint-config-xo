@@ -17,7 +17,6 @@ $ npm install -D tslint-config-xo
 
 ## Usage
 
-
 Create `tslint.json` file and add `extends` field:
 
 ```json
@@ -25,8 +24,6 @@ Create `tslint.json` file and add `extends` field:
   "extends": "tslint-config-xo"
 }
 ```
-
-Supports parsing ES2015, but doesn't enforce it by default.
 
 This package also exposes `xo/esnext` if you want ES2015+ rules:
 
@@ -49,17 +46,13 @@ You can overwrite rules by `rules` field:
 
 ## We use
 
-  * [buzinas/tslint-eslint-rules](https://github.com/buzinas/tslint-eslint-rules)
-  * [Microsoft/tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib)
-  * [vrsource/vrsource-tslint-rules](https://github.com/vrsource/vrsource-tslint-rules)
-  * [jonaskello/tslint-divid](https://github.com/jonaskello/tslint-divid)
-
-## Development
-
-Requirements:
-
-  * Node.js 4+
-  * npm 2+
+  * [tslint-eslint-rules](https://github.com/buzinas/tslint-eslint-rules)
+  * [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib)
+  * [vrsource-tslint-rules](https://github.com/vrsource/vrsource-tslint-rules)
+  * [tslint-divid](https://github.com/jonaskello/tslint-divid)
+  * [tslint-consistent-codestyle](https://github.com/ajafff/tslint-consistent-codestyle)
+  * [tslint-sonarts](https://github.com/SonarSource/SonarTS)
+  * [tslint-config-security](https://github.com/webschik/tslint-config-security)
 
 ### Quick Start
 
@@ -69,22 +62,17 @@ $ npm i
 $ npm test
 ```
 
-### Documentation
-
-```shell
-$ npm run docs
-```
-
 ### Markers
 
 We use JSDoc-like syntax for mark rules:
 
 ```js
 /**
- * @eslint {comma-dangle}
- * @tslint {trailing-comma}
- * @provider {tslint}
- * @missed {requireStringLiterals, allowEmptyCatch}
+ * @eslint – The rule name in ESLint.
+ * @provider – The package that contains the rule.
+ * @missed – The rule has a missed option (for example, unavailable).
+ * @typescript – The rule is available in the compiler.
+ * @duplicate – The rule is a duplicate for XXX.
  * @unavailable – The rule is currently unavailable.
  * @notApplicable – The rule is not applicable to Typescript.
  */

@@ -22,9 +22,7 @@ describe('Integration', () => {
 		const expected = [
 			'no-constant-condition',
 			'ter-indent',
-			'indent',
-			'ter-padded-blocks',
-			'ter-padded-blocks'
+			'indent'
 		];
 
 		const actual = linter.getResult().failures.map((item) => item.getRuleName());

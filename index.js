@@ -2,19 +2,26 @@
 
 const path = require('path');
 
-const nodeModulesPath = path.join(require.resolve('tslint-eslint-rules'), '..', '..');
+function getRulePackageDirectory(name, suffix) {
+	const packagePath = require.resolve(name);
+	const nodeModulesPath = path.dirname(packagePath);
+
+	return path.join(nodeModulesPath, suffix || '');
+}
 
 module.exports = {
 	rulesDirectory: [
-		path.join(nodeModulesPath, 'tslint-eslint-rules/dist/rules'),
-		path.join(nodeModulesPath, 'tslint-microsoft-contrib'),
-		path.join(nodeModulesPath, 'vrsource-tslint-rules/rules'),
-		path.join(nodeModulesPath, 'tslint-divid/rules')
+		getRulePackageDirectory('tslint-eslint-rules', 'dist/rules'),
+		getRulePackageDirectory('tslint-microsoft-contrib'),
+		getRulePackageDirectory('vrsource-tslint-rules', 'rules'),
+		getRulePackageDirectory('tslint-divid', 'rules'),
+		getRulePackageDirectory('tslint-consistent-codestyle'),
+		getRulePackageDirectory('tslint-sonarts', 'lib/rules'),
+		getRulePackageDirectory('tslint-config-security', 'dist/rules')
 	],
 	rules: {
 		/**
 		 * @eslint {comma-dangle}
-		 * @tslint {trailing-comma}
 		 * @provider {tslint}
 		 */
 		'trailing-comma': [
@@ -38,6 +45,12 @@ module.exports = {
 		// 'getter-return': null,
 
 		/**
+		 * @eslint {no-async-promise-executor}
+		 * @unavailable
+		 */
+		// 'no-async-promise-executor': null,
+
+		/**
 		 * @eslint {no-await-in-loop}
 		 * @unavailable
 		 */
@@ -51,28 +64,24 @@ module.exports = {
 
 		/**
 		 * @eslint {no-cond-assign}
-		 * @tslint {no-conditional-assignment}
 		 * @provider {tslint}
 		 */
 		'no-conditional-assignment': true,
 
 		/**
 		 * @eslint {no-constant-condition}
-		 * @tslint {no-constant-condition}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-constant-condition': true,
 
 		/**
 		 * @eslint {no-control-regex}
-		 * @tslint {no-control-regex}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-control-regex': true,
 
 		/**
 		 * @eslint {no-debugger}
-		 * @tslint {no-debugger}
 		 * @provider {tslint}
 		 */
 		'no-debugger': true,
@@ -91,21 +100,18 @@ module.exports = {
 
 		/**
 		 * @eslint {no-duplicate-case}
-		 * @tslint {no-duplicate-case}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-duplicate-case': true,
 
 		/**
 		 * @eslint {no-empty-character-class}
-		 * @tslint {no-empty-character-class}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-empty-character-class': true,
 
 		/**
 		 * @eslint {no-empty}
-		 * @tslint {no-empty}
 		 * @provider {tslint}
 		 * @missed {allowEmptyCatch}
 		 */
@@ -113,21 +119,18 @@ module.exports = {
 
 		/**
 		 * @eslint {no-ex-assign}
-		 * @tslint {no-ex-assign}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-ex-assign': true,
 
 		/**
 		 * @eslint {no-extra-boolean-cast}
-		 * @tslint {no-extra-boolean-cast}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-extra-boolean-cast': true,
 
 		/**
 		 * @eslint {no-extra-semi}
-		 * @tslint {no-extra-semi}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-extra-semi': true,
@@ -140,7 +143,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-inner-declarations}
-		 * @tslint {no-inner-declarations}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-inner-declarations': [
@@ -150,17 +152,21 @@ module.exports = {
 
 		/**
 		 * @eslint {no-invalid-regexp}
-		 * @tslint {no-invalid-regexp}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-invalid-regexp': true,
 
 		/**
 		 * @eslint {no-irregular-whitespace}
-		 * @tslint {no-irregular-whitespace}
 		 * @provider {tslint}
 		 */
 		'no-irregular-whitespace': true,
+
+		/**
+		 * @eslint {no-misleading-character-class}
+		 * @unavailable
+		 */
+		// 'no-misleading-character-class': null,
 
 		/**
 		 * @eslint {no-obj-calls}
@@ -176,21 +182,18 @@ module.exports = {
 
 		/**
 		 * @eslint {no-regex-spaces}
-		 * @tslint {no-regex-spaces}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-regex-spaces': true,
 
 		/**
 		 * @eslint {no-sparse-arrays}
-		 * @tslint {no-sparse-arrays}
 		 * @provider {tslint}
 		 */
 		'no-sparse-arrays': true,
 
 		/**
 		 * @eslint {no-template-curly-in-string}
-		 * @tslint {no-invalid-template-strings}
 		 * @provider {tslint}
 		 */
 		'no-invalid-template-strings': true,
@@ -203,7 +206,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-unsafe-finally}
-		 * @tslint {no-unsafe-finally}
 		 * @provider {tslint}
 		 */
 		'no-unsafe-finally': true,
@@ -215,15 +217,19 @@ module.exports = {
 		// 'no-unsafe-negation': null,
 
 		/**
+		 * @eslint {require-atomic-updates}
+		 * @unavailable
+		 */
+		// 'require-atomic-updates': null,
+
+		/**
 		 * @eslint {use-isnan}
-		 * @tslint {use-isnan}
 		 * @provider {tslint}
 		 */
 		'use-isnan': true,
 
 		/**
 		 * @eslint {valid-typeof}
-		 * @tslint {valid-typeof}
 		 * @provider {tslint-eslint-rules}
 		 * @missed {requireStringLiterals}
 		 */
@@ -231,7 +237,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-unexpected-multiline}
-		 * @tslint {no-unexpected-multiline}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-unexpected-multiline': true,
@@ -250,14 +255,12 @@ module.exports = {
 
 		/**
 		 * @eslint {block-scoped-var}
-		 * @tslint {no-shadowed-variable}
 		 * @provider {tslint}
 		 */
 		'no-shadowed-variable': true,
 
 		/**
 		 * @eslint {complexity}
-		 * @tslint {cyclomatic-complexity}
 		 * @provider {tslint}
 		 */
 		'cyclomatic-complexity': {
@@ -266,21 +269,18 @@ module.exports = {
 
 		/**
 		 * @eslint {curly}
-		 * @tslint {curly}
 		 * @provider {tslint}
 		 */
 		curly: true,
 
 		/**
 		 * @eslint {default-case}
-		 * @tslint {switch-default}
 		 * @provider {tslint}
 		 */
 		'switch-default': true,
 
 		/**
 		 * @eslint {dot-notation}
-		 * @tslint {dot-notation}
 		 * @provider {tslint}
 		 */
 		'no-string-literal': true,
@@ -293,33 +293,27 @@ module.exports = {
 
 		/**
 		 * @eslint {eqeqeq}
-		 * @tslint {triple-equals}
 		 * @provider {tslint}
 		 */
 		'triple-equals': true,
 
 		/**
 		 * @eslint {guard-for-in}
-		 * @tslint {forin}
 		 * @provider {tslint}
 		 */
 		forin: true,
 
 		/**
 		 * @eslint {no-alert}
-		 * @tslint {ban}
 		 * @provider {tslint}
 		 */
 		ban: [
 			true,
-			[
-				'alert'
-			]
+			'alert'
 		],
 
 		/**
 		 * @eslint {no-caller}
-		 * @tslint {no-arg}
 		 * @provider {tslint}
 		 */
 		'no-arg': true,
@@ -338,15 +332,18 @@ module.exports = {
 
 		/**
 		 * @eslint {no-else-return}
-		 * @unavailable
+		 * @provider {tslint-consistent-codestyle}
 		 */
-		// 'no-else-return': null,
+		'no-else-after-return': [
+			true,
+			'allow-else-if'
+		],
 
 		/**
 		 * @eslint {no-empty-pattern}
-		 * @unavailable
+		 * @provider (tslint-sonarts)
 		 */
-		// 'no-empty-pattern': null,
+		'no-empty-destructuring': true,
 
 		/**
 		 * @eslint {no-eq-null}
@@ -356,7 +353,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-eval}
-		 * @tslint {no-eval}
 		 * @provider {tslint}
 		 */
 		'no-eval': true,
@@ -369,9 +365,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-extra-bind}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-extra-bind': null,
+		'unnecessary-bind': true,
 
 		/**
 		 * @eslint {no-extra-label}
@@ -381,14 +377,12 @@ module.exports = {
 
 		/**
 		 * @eslint {no-fallthrough}
-		 * @tslint {dot-notation}
 		 * @provider {tslint}
 		 */
 		'no-switch-case-fall-through': true,
 
 		/**
 		 * @eslint {no-floating-decimal}
-		 * @tslint {number-literal-format}
 		 * @provider {tslint}
 		 */
 		'number-literal-format': true,
@@ -425,7 +419,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-labels}
-		 * @tslint {no-label}
 		 * @provider {tslint-divid}
 		 */
 		'no-label': true,
@@ -438,7 +431,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-multi-spaces}
-		 * @tslint {no-multi-spaces}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'no-multi-spaces': [
@@ -452,15 +444,14 @@ module.exports = {
 
 		/**
 		 * @eslint {no-multi-str}
-		 * @unavailable
+		 * @provider {tslint-sonarts}
 		 */
-		// 'no-multi-str': null,
+		'no-multiline-string-literals': true,
 
 		/**
 		 * @eslint {no-new-func}
 		 * @eslint {no-array-constructor}
 		 * @eslint {no-new-object}
-		 * @tslint {prefer-literal}
 		 * @provider {vrsource-tslint-rules}
 		 */
 		'prefer-literal': [
@@ -472,7 +463,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-new-wrappers}
-		 * @tslint {no-construct}
 		 * @provider {tslint}
 		 */
 		'no-construct': true,
@@ -480,14 +470,12 @@ module.exports = {
 		/**
 		 * @eslint {no-new}
 		 * @eslint {no-unused-expressions}
-		 * @tslint {no-unused-expression}
 		 * @provider {tslint}
 		 */
 		'no-unused-expression': true,
 
 		/**
 		 * @eslint {no-octal-escape}
-		 * @tslint {no-octal-literal}
 		 * @provider {tslint-microsoft-contrib}
 		 */
 		'no-octal-literal': true,
@@ -506,7 +494,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-redeclare}
-		 * @tslint {no-duplicate-variable}
 		 * @provider {tslint}
 		 */
 		'no-duplicate-variable': true,
@@ -531,25 +518,24 @@ module.exports = {
 
 		/**
 		 * @eslint {no-self-assign}
-		 * @unavailable
+		 * @provider {tslint-sonarts}
 		 */
-		// 'no-self-assign': null,
+		'no-self-assignment': true,
 
 		/**
 		 * @eslint {no-self-compare}
-		 * @unavailable
+		 * @provider {tslint-eslint-rules}
 		 */
-		// 'no-self-compare': null,
+		'ter-no-self-compare': true,
 
 		/**
 		 * @eslint {no-sequences}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-sequences': null,
+		'ban-comma-operator': true,
 
 		/**
 		 * @eslint {no-throw-literal}
-		 * @tslint {no-string-throw}
 		 * @provider {tslint}
 		 */
 		'no-string-throw': true,
@@ -598,13 +584,15 @@ module.exports = {
 
 		/**
 		 * @eslint {no-warning-comments}
-		 * @unavailable
+		 * @provider {tslint-microsoft-contrib}
 		 */
-		// 'no-warning-comments': null,
+		'no-suspicious-comment': {
+			options: ['^TODO', '^FIXME', '^XXX'],
+			severity: 'warning'
+		},
 
 		/**
 		 * @eslint {no-with}
-		 * @tslint {no-with-statement}
 		 * @provider {tslint-microsoft-contrib}
 		 */
 		'no-with-statement': true,
@@ -617,7 +605,6 @@ module.exports = {
 
 		/**
 		 * @eslint {radix}
-		 * @tslint {radix}
 		 * @provider {tslint}
 		 */
 		radix: true,
@@ -630,9 +617,9 @@ module.exports = {
 
 		/**
 		 * @eslint {yoda}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// yoda: null,
+		'binary-expression-operand-order': true,
 
 		/**
 		 * @eslint {no-delete-var}
@@ -660,9 +647,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-undef-init}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-undef-init': null,
+		'no-unnecessary-initializer': true,
 
 		/**
 		 * @eslint {no-undef}
@@ -672,22 +659,14 @@ module.exports = {
 
 		/**
 		 * @eslint {no-unused-vars}
-		 * @tslint {no-unused-variable}
-		 * @typescript {noUnusedLocals, noUnusedParameters}
+		 * @typescript {noUnusedLocals}
+		 * @typescript {noUnusedParameters}
 		 * @provider {typescript}
 		 */
 		// 'no-unused-variable': null
 
 		/**
-		 * @eslint {no-use-before-define}
-		 * @tslint {no-use-before-declare}
-		 * @provider {tslint}
-		 */
-		'no-use-before-declare': true,
-
-		/**
 		 * @eslint {handle-callback-err}
-		 * @tslint {handle-callback-err}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'handle-callback-err': {
@@ -696,9 +675,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-buffer-constructor}
-		 * @unavailable
+		 * @providers {tslint-config-security}
 		 */
-		// 'no-buffer-constructor': null,
+		'tsr-detect-non-literal-buffer': true,
 
 		/**
 		 * @eslint {no-mixed-requires}
@@ -720,15 +699,17 @@ module.exports = {
 
 		/**
 		 * @eslint {no-restricted-imports}
-		 * @unavailable
-		 */
-		// 'no-restricted-imports': null,
-
-		/**
 		 * @eslint {no-restricted-modules}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-restricted-modules': null,
+		'import-blacklist': [
+			true,
+			'domain',
+			'freelist',
+			'smalloc',
+			'sys',
+			'colors'
+		],
 
 		/**
 		 * @eslint {array-bracket-newline}
@@ -738,7 +719,6 @@ module.exports = {
 
 		/**
 		 * @eslint {array-bracket-spacing}
-		 * @tslint {array-bracket-spacing}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'array-bracket-spacing': [
@@ -747,8 +727,14 @@ module.exports = {
 		],
 
 		/**
+		 * @eslint {array-element-newline}
+		 * @unavailable
+		 */
+		// 'array-element-newline': null,
+
+		/**
 		 * @eslint {brace-style}
-		 * @tslint {one-line}
+		 * @missed {allowSingleLine}
 		 * @provider {tslint}
 		 */
 		'one-line': [
@@ -762,7 +748,6 @@ module.exports = {
 
 		/**
 		 * @eslint {camelcase}
-		 * @tslint {variable-name}
 		 * @provider {tslint}
 		 */
 		'variable-name': [
@@ -775,13 +760,17 @@ module.exports = {
 		/**
 		 * @eslint {capitalized-comments}
 		 * @eslint {spaced-comment}
-		 * @tslint {comment-format}
+		 * @missed {ignoreInlineComments}
+		 * @missed {ignoreConsecutiveComments}
 		 * @provider {tslint}
 		 */
 		'comment-format': [
 			true,
 			'check-space', // 'always'
-			'check-uppercase' // Rule: capitalized-comments
+			'check-uppercase', // Rule: capitalized-comments
+			{
+				'ignore-words': ['pragma', 'ignore', 'prettier-ignore'] // ignorePattern
+			}
 		],
 
 		/**
@@ -804,14 +793,12 @@ module.exports = {
 
 		/**
 		 * @eslint {eol-last}
-		 * @tslint {eofline}
 		 * @provider {tslint}
 		 */
 		eofline: true,
 
 		/**
 		 * @eslint {func-call-spacing}
-		 * @tslint {ter-func-call-spacing}
 		 * @linrary {tslint-eslint-rules}
 		 */
 		'ter-func-call-spacing': [
@@ -832,14 +819,7 @@ module.exports = {
 		// 'func-names': null,
 
 		/**
-		 * @eslint {function-paren-newline}
-		 * @unavailable
-		 */
-		// 'function-paren-newline': null,
-
-		/**
 		 * @eslint {indent}
-		 * @tslint {ter-indent}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'ter-indent': [
@@ -864,7 +844,6 @@ module.exports = {
 		/**
 		 * @eslint {jsx-quotes}
 		 * @eslint {quotes}
-		 * @tslint {quotemark}
 		 * @provider {tslint}
 		 */
 		quotemark: [
@@ -888,10 +867,12 @@ module.exports = {
 
 		/**
 		 * @eslint {linebreak-style}
-		 * @tslint {linebreak-style}
 		 * @provider {tslint}
 		 */
-		'linebreak-style': 'LF',
+		'linebreak-style': {
+			options: 'LF',
+			severity: process.platform === 'win32' ? 'off' : 'error'
+		},
 
 		/**
 		 * @eslint {lines-between-class-members}
@@ -913,15 +894,18 @@ module.exports = {
 
 		/**
 		 * @eslint {max-params}
-		 * @unavailable
+		 * @provider {vrsource-tslint-rules}
 		 */
-		// 'max-params': null,
+		'max-params': {
+			options: 4,
+			severity: 'warning'
+		},
 
 		/**
 		 * @eslint {max-statements-per-line}
-		 * @unavailable
+		 * @provider {tslint-sonarts}
 		 */
-		// 'max-statements-per-line': null,
+		'no-statements-same-line': true,
 
 		/**
 		 * @eslint {new-cap}
@@ -931,7 +915,6 @@ module.exports = {
 
 		/**
 		 * @eslint {new-parens}
-		 * @tslint {new-parens}
 		 * @provider {tslint}
 		 */
 		'new-parens': true,
@@ -950,7 +933,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-mixed-spaces-and-tabs}
-		 * @tslint {indent}
 		 * @provider {tslint}
 		 */
 		indent: [
@@ -966,7 +948,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-multiple-empty-lines}
-		 * @tslint {no-consecutive-blank-lines}
 		 * @provider {tslint}
 		 */
 		'no-consecutive-blank-lines': true,
@@ -979,6 +960,7 @@ module.exports = {
 
 		/**
 		 * @eslint {no-restricted-syntax}
+		 * @duplicate {no-with}
 		 * @unavailable
 		 */
 		// 'no-restricted-syntax': null,
@@ -991,7 +973,6 @@ module.exports = {
 
 		/**
 		 * @eslint {no-trailing-spaces}
-		 * @tslint {no-trailing-whitespace}
 		 * @provider {tslint}
 		 */
 		'no-trailing-whitespace': true,
@@ -1004,7 +985,6 @@ module.exports = {
 
 		/**
 		 * @eslint {object-curly-spacing}
-		 * @tslint {object-curly-spacing}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'object-curly-spacing': [
@@ -1015,7 +995,6 @@ module.exports = {
 		/**
 		 * @eslint {one-var}
 		 * @eslint {one-var-declaration-per-line}
-		 * @tslint {one-variable-per-declaration}
 		 * @provider {tslint}
 		 */
 		'one-variable-per-declaration': true,
@@ -1034,14 +1013,21 @@ module.exports = {
 
 		/**
 		 * @eslint {padded-blocks}
-		 * @tslint {ter-padded-blocks}
 		 * @provider {tslint-eslint-rules}
 		 */
-		'ter-padded-blocks': true,
+		'ter-padded-blocks': [
+			true,
+			'never'
+		],
+
+		/**
+		 * @eslint {padding-line-between-statements}
+		 * @unavailable
+		 */
+		// 'padding-line-between-statements': null,
 
 		/**
 		 * @eslint {quote-props}
-		 * @tslint {object-literal-key-quotes}
 		 * @provider {tslint}
 		 */
 		'object-literal-key-quotes': [
@@ -1054,7 +1040,6 @@ module.exports = {
 		 * @eslint {semi-spacing}
 		 * @eslint {space-before-blocks}
 		 * @eslint {space-infix-ops}
-		 * @tslint {whitespace}
 		 * @provider {tslint}
 		 * @missed {before}
 		 */
@@ -1073,7 +1058,6 @@ module.exports = {
 
 		/**
 		 * @eslint {semi}
-		 * @tslint {semicolon}
 		 * @provider {tslint}
 		 */
 		semicolon: [
@@ -1083,7 +1067,6 @@ module.exports = {
 
 		/**
 		 * @eslint {space-before-function-paren}
-		 * @tslint {space-before-function-paren}
 		 * @provider {tslint}
 		 */
 		'space-before-function-paren': [
@@ -1097,7 +1080,6 @@ module.exports = {
 
 		/**
 		 * @eslint {space-in-parens}
-		 * @tslint {space-within-parens}
 		 * @provider {tslint}
 		 */
 		'space-within-parens': [
@@ -1131,7 +1113,6 @@ module.exports = {
 
 		/**
 		 * @eslint {arrow-parens}
-		 * @tslint {ter-arrow-parens}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'ter-arrow-parens': [
@@ -1141,7 +1122,6 @@ module.exports = {
 
 		/**
 		 * @eslint {arrow-spacing}
-		 * @tslint {ter-arrow-spacing}
 		 * @provider {tslint-eslint-rules}
 		 */
 		'ter-arrow-spacing': [
@@ -1150,7 +1130,7 @@ module.exports = {
 				before: true,
 				after: true
 			}
-		]
+		],
 
 		/**
 		 * @eslint {constructor-super}
@@ -1202,9 +1182,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-useless-constructor}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-useless-constructor': null,
+		'unnecessary-constructor': true,
 
 		/**
 		 * @eslint {no-useless-rename}
@@ -1241,5 +1221,20 @@ module.exports = {
 		 * @unavailable
 		 */
 		// 'yield-star-spacing': null,
+
+		/**
+		 * @eslint {valid-jsdoc}
+		 * @provider {tslint-eslint-rules}
+		 */
+		'valid-jsdoc': {
+			options: {
+				requireReturn: false,
+				requireParamType: false,
+				requireReturnType: false,
+				requireParamDescription: true,
+				requireReturnDescription: true
+			},
+			severity: 'warning'
+		}
 	}
 };
