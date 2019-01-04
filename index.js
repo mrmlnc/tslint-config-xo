@@ -519,9 +519,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-self-assign}
-		 * @unavailable
+		 * @provider {tslint-sonarts}
 		 */
-		// 'no-self-assign': null,
+		'no-self-assignment': true,
 
 		/**
 		 * @eslint {no-self-compare}
