@@ -798,7 +798,12 @@ module.exports = {
 		'comment-format': [
 			true,
 			'check-space', // 'always'
-			'check-uppercase' // Rule: capitalized-comments
+			'check-uppercase', // Rule: capitalized-comments
+			{
+				'ignore-words': ['pragma', 'ignore', 'prettier-ignore'] // ignorePattern
+				// ignoreInlineComments
+				// ignoreConsecutiveComments
+			}
 		],
 
 		/**
