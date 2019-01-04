@@ -907,7 +907,10 @@ module.exports = {
 		 * @tslint {linebreak-style}
 		 * @provider {tslint}
 		 */
-		'linebreak-style': 'LF',
+		'linebreak-style': {
+			options: 'LF',
+			severity: process.platform === 'win32' ? 'off' : 'error'
+		},
 
 		/**
 		 * @eslint {lines-between-class-members}
