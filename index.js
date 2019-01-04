@@ -585,9 +585,12 @@ module.exports = {
 
 		/**
 		 * @eslint {no-warning-comments}
-		 * @unavailable
+		 * @provider {tslint-microsoft-contrib}
 		 */
-		// 'no-warning-comments': null,
+		'no-suspicious-comment': {
+			options: ['^TODO', '^FIXME', '^XXX'],
+			severity: 'warning'
+		},
 
 		/**
 		 * @eslint {no-with}
