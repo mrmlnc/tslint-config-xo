@@ -15,7 +15,8 @@ module.exports = {
 		getRulePackageDirectory('tslint-microsoft-contrib'),
 		getRulePackageDirectory('vrsource-tslint-rules', 'rules'),
 		getRulePackageDirectory('tslint-divid', 'rules'),
-		getRulePackageDirectory('tslint-consistent-codestyle')
+		getRulePackageDirectory('tslint-consistent-codestyle'),
+		getRulePackageDirectory('tslint-sonarts', 'lib/rules')
 	],
 	rules: {
 		/**
@@ -341,9 +342,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-empty-pattern}
-		 * @unavailable
+		 * @provider (tslint-sonarts)
 		 */
-		// 'no-empty-pattern': null,
+		'no-empty-destructuring': true,
 
 		/**
 		 * @eslint {no-eq-null}
