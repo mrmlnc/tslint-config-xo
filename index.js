@@ -16,7 +16,8 @@ module.exports = {
 		getRulePackageDirectory('vrsource-tslint-rules', 'rules'),
 		getRulePackageDirectory('tslint-divid', 'rules'),
 		getRulePackageDirectory('tslint-consistent-codestyle'),
-		getRulePackageDirectory('tslint-sonarts', 'lib/rules')
+		getRulePackageDirectory('tslint-sonarts', 'lib/rules'),
+		getRulePackageDirectory('tslint-config-security', 'dist/rules')
 	],
 	rules: {
 		/**
@@ -676,9 +677,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-buffer-constructor}
-		 * @unavailable
+		 * @providers {tslint-config-security}
 		 */
-		// 'no-buffer-constructor': null,
+		'tsr-detect-non-literal-buffer': true,
 
 		/**
 		 * @eslint {no-mixed-requires}
