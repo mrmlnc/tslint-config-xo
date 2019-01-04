@@ -525,9 +525,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-self-compare}
-		 * @unavailable
+		 * @provider {tslint-eslint-rules}
 		 */
-		// 'no-self-compare': null,
+		'ter-no-self-compare': true,
 
 		/**
 		 * @eslint {no-sequences}
