@@ -618,9 +618,9 @@ module.exports = {
 
 		/**
 		 * @eslint {yoda}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// yoda: null,
+		'binary-expression-operand-order': true,
 
 		/**
 		 * @eslint {no-delete-var}
