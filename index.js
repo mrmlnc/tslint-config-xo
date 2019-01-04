@@ -1175,7 +1175,7 @@ module.exports = {
 				before: true,
 				after: true
 			}
-		]
+		],
 
 		/**
 		 * @eslint {constructor-super}
@@ -1269,8 +1269,17 @@ module.exports = {
 
 		/**
 		 * @eslint {valid-jsdoc}
-		 * @unavailable
+		 * @provider {tslint-eslint-rules}
 		 */
-		// 'valid-jsdoc': null,
+		'valid-jsdoc': {
+			options: {
+				requireReturn: false,
+				requireParamType: false,
+				requireReturnType: false,
+				requireParamDescription: true,
+				requireReturnDescription: true
+			},
+			severity: 'warning'
+		}
 	}
 };
