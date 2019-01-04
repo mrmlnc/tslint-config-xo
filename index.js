@@ -365,9 +365,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-extra-bind}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-extra-bind': null,
+		'unnecessary-bind': true,
 
 		/**
 		 * @eslint {no-extra-label}
