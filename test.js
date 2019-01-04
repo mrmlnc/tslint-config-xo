@@ -4,50 +4,48 @@ const fs = require('fs');
 const assert = require('assert');
 const tslint = require('tslint');
 
-const nextRules = require('./esnext');
-const baseRules = require('.');
-
 const options = {
 	fix: false,
 	formatter: 'json',
 	rulesDirectory: './'
 };
 
-function formatRules(rules) {
-	const obj = new Map();
-
-	Object.keys(rules).forEach((rule) => {
-		obj.set(rule, rules[rule]);
-	});
-
-	return obj;
-}
-
 describe('Integration', () => {
 	it('Should apply the BASE rules.', () => {
 		const content = fs.readFileSync('./fixtures/base.ts', 'utf8').toString();
 		const linter = new tslint.Linter(options);
 
-		baseRules.rules = formatRules(baseRules.rules);
+		const rules = tslint.Linter.loadConfigurationFromPath('./index.js');
 
-		linter.lint('base.ts', content, baseRules);
+		linter.lint('base.ts', content, rules);
 
-		const warnings = linter.getResult().failures.map((item) => item.getRuleName());
+		const expected = [
+			'no-constant-condition',
+			'ter-indent',
+			'indent',
+			'ter-padded-blocks',
+			'ter-padded-blocks'
+		];
 
-		assert.ok(warnings.indexOf('no-constant-condition') !== -1);
-		assert.ok(warnings.indexOf('ter-indent') !== -1);
+		const actual = linter.getResult().failures.map((item) => item.getRuleName());
+
+		assert.deepStrictEqual(actual, expected);
 	});
 
 	it('Should apply the ESNEXT rules.', () => {
 		const content = fs.readFileSync('./fixtures/esnext.ts', 'utf8').toString();
 		const linter = new tslint.Linter(options);
 
-		nextRules.rules = formatRules(nextRules.rules);
+		const rules = tslint.Linter.loadConfigurationFromPath('./esnext.js');
 
-		linter.lint('esnext.ts', content, nextRules);
+		linter.lint('esnext.ts', content, rules);
 
-		const warnings = linter.getResult().failures.map((item) => item.getRuleName());
+		const expected = [
+			'no-var-keyword'
+		];
 
-		assert.ok(warnings.indexOf('no-var-keyword') !== -1);
+		const actual = linter.getResult().failures.map((item) => item.getRuleName());
+
+		assert.deepStrictEqual(actual, expected);
 	});
 });
