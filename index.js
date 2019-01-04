@@ -648,9 +648,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-undef-init}
-		 * @unavailable
+		 * @provider {tslint}
 		 */
-		// 'no-undef-init': null,
+		'no-unnecessary-initializer': true,
 
 		/**
 		 * @eslint {no-undef}
