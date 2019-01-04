@@ -445,9 +445,9 @@ module.exports = {
 
 		/**
 		 * @eslint {no-multi-str}
-		 * @unavailable
+		 * @provider {tslint-sonarts}
 		 */
-		// 'no-multi-str': null,
+		'no-multiline-string-literals': true,
 
 		/**
 		 * @eslint {no-new-func}
