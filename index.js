@@ -309,9 +309,7 @@ module.exports = {
 		 */
 		ban: [
 			true,
-			[
-				'alert'
-			]
+			'alert'
 		],
 
 		/**
