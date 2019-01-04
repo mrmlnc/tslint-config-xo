@@ -2,6 +2,14 @@
 
 > Adaptation [XO](https://github.com/sindresorhus/xo) configuration for [TSLint](https://github.com/palantir/tslint).
 
+## Donate
+
+If you want to thank me, or promote your issue.
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/mrmlnc)
+
+> :heart: I will be glad to see your support and PR's.
+
 ## Disclaimer
 
 Some bad news:
