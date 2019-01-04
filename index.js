@@ -729,6 +729,7 @@ module.exports = {
 
 		/**
 		 * @eslint {brace-style}
+		 * @missed {allowSingleLine}
 		 * @provider {tslint}
 		 */
 		'one-line': [
@@ -754,6 +755,8 @@ module.exports = {
 		/**
 		 * @eslint {capitalized-comments}
 		 * @eslint {spaced-comment}
+		 * @missed {ignoreInlineComments}
+		 * @missed {ignoreConsecutiveComments}
 		 * @provider {tslint}
 		 */
 		'comment-format': [
@@ -762,8 +765,6 @@ module.exports = {
 			'check-uppercase', // Rule: capitalized-comments
 			{
 				'ignore-words': ['pragma', 'ignore', 'prettier-ignore'] // ignorePattern
-				// ignoreInlineComments
-				// ignoreConsecutiveComments
 			}
 		],
 
@@ -1005,7 +1006,10 @@ module.exports = {
 		 * @eslint {padded-blocks}
 		 * @provider {tslint-eslint-rules}
 		 */
-		'ter-padded-blocks': true,
+		'ter-padded-blocks': [
+			true,
+			'never'
+		],
 
 		/**
 		 * @eslint {padding-line-between-statements}
