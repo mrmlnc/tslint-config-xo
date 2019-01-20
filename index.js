@@ -407,9 +407,11 @@ module.exports = {
 
 		/**
 		 * @eslint {no-implied-eval}
-		 * @unavailable
+		 * @provider {tslint-microsoft-contrib}
 		 */
-		// 'no-implied-eval': null,
+		'no-string-based-set-immediate': true,
+		'no-string-based-set-interval': true,
+		'no-string-based-set-timeout': true,
 
 		/**
 		 * @eslint {no-iterator}
