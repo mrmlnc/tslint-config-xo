@@ -2,6 +2,10 @@
 
 > Adaptation [XO](https://github.com/sindresorhus/xo) configuration for [TSLint](https://github.com/palantir/tslint).
 
+## :warning: Deprecation
+
+The TypeScript project has announced that they're [shifting focus to eslint from tslint](https://eslint.org/blog/2019/01/future-typescript-eslint). Please, use the original [eslint-config-xo](https://github.com/xojs/eslint-config-xo) with [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint).
+
 ## Donate
 
 If you want to thank me, or promote your issue.
